@@ -52,7 +52,7 @@ export default function Daftar() {
       email,
       channel: payment,
     }
-    const response = await fetch('http://api.adhigama.education/v1/page/order', {
+    const response = await fetch('https://api.adhigama.education/v1/page/order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
