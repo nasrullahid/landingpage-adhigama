@@ -26,7 +26,7 @@ export default function Home() {
       });
   }
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen dark:bg-white text-black">
       <section className="h-screen flex flex-col items-center justify-center max-w-4xl mx-auto text-center p-4 sm:p-8 md:p-12">
         <Image
           src="/logo.png"
@@ -465,7 +465,7 @@ export default function Home() {
           <Image
             src="/logo-orange.png"
             alt="Logo Adhigama Education"
-            className="dark:invert my-20 mx-auto"
+            className="my-20 mx-auto"
             width={184}
             height={50}
             priority
