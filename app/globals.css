@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg-primary{
+background-color: #335dac;
+}
+.bg-secondary{
+background-color: #f4861f;
+}
+.text-primay{
+  color: #335dac;
+}
+.text-secondary{
+  color: #f4861f;
+}
