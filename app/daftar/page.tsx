@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Lock, Check } from "react-feather";
 import axios from "axios";
+import qs from "qs";
 import Skeleton from "@/components/skeleton";
-
 import channels from "@/lib/channel.json";
 const pixelID = process.env.NEXT_PUBLIC_PIXEL || "393193640100982";
 
@@ -42,7 +42,6 @@ export default function Daftar() {
     }
     setSubmited(true);
 
-    const qs = require('qs');
     let data = qs.stringify({
       aff: false,
       kode: process.env.NEXT_PUBLIC_REFERRAL || "wkfyvj",
