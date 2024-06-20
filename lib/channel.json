@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "code": "002",
+    "type": "bank transfer",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "005001004743300",
+    "bankName": "BRI",
+    "logo": "bri.svg"
+  },
+  {
+    "id": 702,
+    "code": "faspay",
+    "type": "virtual account",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "1520065056505",
+    "bankName": "BCA",
+    "logo": "bca.svg"
+  },
+  {
+    "id": 801,
+    "code": "faspay",
+    "type": "virtual account",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "1520065056505",
+    "bankName": "BNI",
+    "logo": "bni.svg"
+  },
+  {
+    "id": 2,
+    "code": "451",
+    "type": "bank transfer",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "2222446696",
+    "bankName": "BSI",
+    "logo": "bsi.svg"
+  },
+  {
+    "id": 5,
+    "code": "008",
+    "type": "bank transfer",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "1520065056505",
+    "bankName": "Bank Mandiri",
+    "logo": "mandiri.svg"
+  },
+  {
+    "id": 3,
+    "code": "013",
+    "type": "bank transfer",
+    "accountName": "PT Magau Jaya Digital",
+    "accountNumber": "00702283345",
+    "bankName": "Bank Permata",
+    "logo": "permata.svg"
+  }
+]

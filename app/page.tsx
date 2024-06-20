@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 const pixelID = process.env.NEXT_PUBLIC_PIXEL || "393193640100982";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
   useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
@@ -452,12 +451,19 @@ export default function Home() {
             priority
           />
           <p className="text-xs italic">* Syarat dan Ketentuan Berlaku</p>
-          <h4 className="font-bold text-2xl mt-4 mb-12">
+          <h4 className="font-bold text-3xl my-5">
             Daftar Sekarang dan Raih Masa Depan Gemilang Anda!
           </h4>
+
+          <p className="mb-12 border-dashed border-2 border-orange-700 p-4 rounded-xl w-96 mx-auto flex flex-col items-center justify-center">
+            <h2 className="font-bold text-2xl mb-4">Harga Normal <del className="text-secondary">Rp. 994.000</del></h2>
+            <h2 className="font-bold text-2xl">Hari Ini Sisa <span className="text-secondary">Rp. 197.000</span></h2>
+            {/* <span className="text-lg">Gunakan Kode Promo: </span>
+            <code className="text-secondary font-bold text-2xl">ASN2024</code> */}
+          </p>
           <a
             onClick={() => { triggerPixel() }}
-            href="https://wa.me/62882020528374?text=Halo+min%2C+saya+mau+ikut+bimbingan+belajar+di+Adhigama+Education"
+            href="/daftar"
             className="text-white bg-orange-600 hover:bg-orange-700 focus:ring-1 focus:ring-orange-200 rounded-lg text-lg font-semibold py-5 px-10 text-center dark:text-white dark:focus:ring-orange-900"
           >
             Daftar Sekarang
