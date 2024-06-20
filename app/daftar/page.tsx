@@ -54,17 +54,17 @@ export default function Daftar() {
       payment: payment,
     });
 
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://api.cpnsonline.id/v1/page/order',
+    const config = {
+      method: "post",
+      url: "https://api.adhigama.education/v1/page/order",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      data: data
+      data: data,
     };
 
-    await axios.request(config)
+    await axios
+      .request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));
         import("react-facebook-pixel")
@@ -74,7 +74,7 @@ export default function Daftar() {
             ReactPixel.pageView();
             ReactPixel.track("Lead");
           });
-        window.open(response.data.redirect_url, "_self");
+        window.open(response.data.diagnostic.redirect, "_self");
       })
       .catch((error) => {
         console.log(error);
