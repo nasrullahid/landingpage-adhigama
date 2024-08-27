@@ -20,11 +20,12 @@ export default function Daftar() {
   const [email, setEmail] = useState<string | undefined>();
   const [phone, setPhone] = useState<string | undefined>();
   const [payment, setPayment] = useState<number>(1);
-
-  // Extract the 'ref' query parameter from the URL
-  const refCode = new URLSearchParams(window.location.search).get("ref");
+  const [refCode, setRefCode] = useState<string | null>(null);
 
   useEffect(() => {
+    const queryParam = new URLSearchParams(window.location.search).get("ref");
+    setRefCode(queryParam);
+
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
@@ -32,7 +33,7 @@ export default function Daftar() {
         ReactPixel.pageView();
         ReactPixel.track("InitiateCheckout");
       });
-  });
+  }, []);
 
   async function handleSubmit() {
     if (!nama || !email || !phone) {
@@ -216,7 +217,7 @@ export default function Daftar() {
             <p className="mt-4">
               Dengan checkout, Anda setuju dengan{" "}
               <a
-                href="/kebijakan-layanan"
+                href="#"
                 target="_blank"
                 className="text-blue-600 font-semibold hover:underline"
               >
@@ -224,7 +225,7 @@ export default function Daftar() {
               </a>{" "}
               kami dan mengonfirmasi bahwa Anda telah membaca{" "}
               <a
-                href="/kebijakan-privasi"
+                href="#"
                 target="_blank"
                 className="text-blue-600 font-semibold hover:underline"
               >
