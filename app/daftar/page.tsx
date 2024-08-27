@@ -21,6 +21,9 @@ export default function Daftar() {
   const [phone, setPhone] = useState<string | undefined>();
   const [payment, setPayment] = useState<number>(1);
 
+  // Extract the 'ref' query parameter from the URL
+  const refCode = new URLSearchParams(window.location.search).get("ref");
+
   useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
@@ -44,10 +47,10 @@ export default function Daftar() {
 
     let data = qs.stringify({
       aff: false,
-      kode: process.env.NEXT_PUBLIC_REFERRAL || "wkfyvj",
+      kode: refCode || process.env.NEXT_PUBLIC_REFERRAL || "wkfyvj", // Use refCode if available
       price: true,
       paket: "platinum",
-      promo: "ASN2024",
+      promo: "DISKON50",
       nama: nama,
       phone: phone,
       email: email,
@@ -97,7 +100,7 @@ export default function Daftar() {
               </p>
               <p className="font-medium flex flex-col sm:flex-row">
                 <del className="text-gray-500">Rp. 994.000</del>
-                <span className="font-semibold ml-0 sm:ml-2">Rp. 197.000</span>
+                <span className="font-semibold ml-0 sm:ml-2">Rp. 497.000</span>
               </p>
             </div>
 
