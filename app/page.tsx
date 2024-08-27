@@ -1,10 +1,37 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 const pixelID = process.env.NEXT_PUBLIC_PIXEL || "393193640100982";
 
+type Affiliate = {
+  id: number;
+  kode: string;
+  pixelId?: string | null;
+  gaId?: string | null;
+  tiktokId?: string | null;
+};
+
 export default function Home() {
+  const [affiliate, setAffiliate] = useState<Affiliate | undefined>(undefined);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://api.adhigama.education/v1/page/generate-referral');
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await res.json();
+        setAffiliate(data.response); // Adjusting to the correct path in the response
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this runs only once when the component mounts
+
   useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
@@ -14,6 +41,7 @@ export default function Home() {
         ReactPixel.track("ViewContent");
       });
   });
+
 
   function triggerPixel() {
     import("react-facebook-pixel")
@@ -455,15 +483,15 @@ export default function Home() {
             Daftar Sekarang dan Raih Masa Depan Gemilang Anda!
           </h4>
 
-          <p className="mb-12 border-dashed border-2 border-orange-700 p-4 rounded-xl w-96 mx-auto flex flex-col items-center justify-center">
+          <div className="mb-20">
+            {/* <p className="border-dashed border-2 border-orange-700 p-4 rounded-xl w-96 mx-auto flex flex-col items-center justify-center">
             <h2 className="font-bold text-2xl mb-4">Harga Normal <del className="text-secondary">Rp. 994.000</del></h2>
-            <h2 className="font-bold text-2xl">Hari Ini Sisa <span className="text-secondary">Rp. 197.000</span></h2>
-            {/* <span className="text-lg">Gunakan Kode Promo: </span>
-            <code className="text-secondary font-bold text-2xl">ASN2024</code> */}
-          </p>
+            <h2 className="font-bold text-2xl">Hari Ini Sisa <span className="text-secondary">Rp. 497.000</span></h2>
+            </p> */}
+          </div>
           <a
             onClick={() => { triggerPixel() }}
-            href="/daftar"
+            href={`/daftar?ref=${affiliate?.kode}`}
             className="text-white bg-orange-600 hover:bg-orange-700 focus:ring-1 focus:ring-orange-200 rounded-lg text-lg font-semibold py-5 px-10 text-center dark:text-white dark:focus:ring-orange-900"
           >
             Daftar Sekarang
