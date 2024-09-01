@@ -462,7 +462,7 @@ export default function Home() {
           </div>
           <a
             onClick={() => { triggerPixel() }}
-            href="https://mauorder.online/adhigama-mg"
+            href="https://mauorder.online/cs-adhigama"
             className="text-white bg-orange-600 hover:bg-orange-700 focus:ring-1 focus:ring-orange-200 rounded-lg text-lg font-semibold py-5 px-10 text-center dark:text-white dark:focus:ring-orange-900"
           >
             Daftar Sekarang

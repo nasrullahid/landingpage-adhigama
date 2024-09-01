@@ -454,11 +454,12 @@ export default function Home() {
           <h4 className="font-bold text-3xl my-5">
             Daftar Sekarang dan Raih Masa Depan Gemilang Anda!
           </h4>
-
-          {/* <p className="mb-12 border-dashed border-2 border-orange-700 p-4 rounded-xl w-96 mx-auto flex flex-col items-center justify-center">
+          <div className="mb-20">
+            {/* <p className="mb-12 border-dashed border-2 border-orange-700 p-4 rounded-xl w-96 mx-auto flex flex-col items-center justify-center">
             <h2 className="font-bold text-2xl mb-4">Harga Normal <del className="text-secondary">Rp. 994.000</del></h2>
             <h2 className="font-bold text-2xl">Hari Ini Sisa <span className="text-secondary">Rp. 197.000</span></h2>
           </p> */}
+          </div>
           <a
             onClick={() => { triggerPixel() }}
             href="https://mauorder.online/adhigama-mg"
